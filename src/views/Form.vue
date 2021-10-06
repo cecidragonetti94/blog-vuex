@@ -1,0 +1,91 @@
+<template>
+  <div class="container-form">
+    <Title text="Form" />
+    <p class="p-form">
+      This is a form made with <strong>v-model</strong> in which the data
+      entered is totally dynamic.
+    </p>
+    <p>Please complete the form</p>
+    <form @submit.prevent="sendForm">
+      <Input :task="task" />
+
+     <!-- <p>{{ task }}</p>  -->
+    </form>
+  </div>
+</template>
+
+<script>
+import Title from "../components/Title.vue";
+import Input from "../components/Input.vue";
+import { mapActions } from "vuex";
+const shortid = require("shortid");
+
+export default {
+  components: {
+    Title,
+    Input,
+  },
+  data: () => ({
+    task: {
+      id: "",
+      name: "",
+      categories: [],
+      status: "",
+      number: 0,
+    },
+  }),
+  methods: {
+    sendForm() {
+      console.log(this.task);
+      if (this.task.name.trim() === "") {
+        console.log("Campo vacio");
+        return;
+      }
+      console.log("no esta vacio");
+      //genera un id aleatorio
+      this.task.id = shortid.generate();
+      console.log(this.task.id);
+      //enviar datos
+      this.setTasks(this.task);
+      this.task = {
+        name: "",
+        categories: [],
+        status: "",
+        number: 0,
+      };
+    },
+    ...mapActions(["setTask"]),
+  },
+};
+</script>
+<style soped>
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 800px;
+  background-color: #eff4f8;
+  width: 1500px;
+  height: 600px;
+  margin-left: 80px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 1500px;
+  height: 900px;
+  margin-top: 40px;
+  align-items: center;
+  font-size: 20px;
+}
+.p-form {
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+</style>
