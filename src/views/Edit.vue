@@ -1,29 +1,61 @@
 <template>
-  <div class="router-link-button">Edit {{ $route.params.id }}-- {{task}}</div>
+ <div class="container-h2">
+ <h2>Task edit: <span class="span-name">{{ task.name }}</span></h2>
+ </div>
+ 
+  <form @submit.prevent="updateTask(task)" class="container-form">
+    <Input :task="task" />
+  </form>
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
+import { mapState, mapActions } from "vuex";
+import Input from "../components/Input.vue";
 export default {
-computed:{
-    ...mapState(['task'])
-},
-methods:{
-    ...mapActions(['setingTask'])
-},
-created(){
-    this.setingTask(this.$route.params.id )
-}
-}
+  components: {
+    Input,
+  },
+  computed: {
+    ...mapState(['task']),
+  },
+  methods: {
+    ...mapActions(['setingTask', 'updateTask']),
+  },
+  created() {
+    this.setingTask(this.$route.params.id);
+  },
+};
 </script>
 
-<style>
-.router-link-button {
-  margin-left: 2px;
-  text-decoration: none;
-  border: 2px solid yellow;
-  color: teal;
-  border-radius: 5px;
-  background-color: yellow;
+<style scoped>
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #eff4f8;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  min-height: 50%;
+}
+.span-name{
+  font-weight: lighter;
+}
+.container-h2{
+
+  background-color: #42b983;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 600px;
+    height: 80px;
+    border-radius: 20px;
+    align-items: center;
+ box-shadow: -9px -7px 5px 0px rgba(131, 129, 129, 0.75);
+-webkit-box-shadow: -9px -7px 5px 0px rgba(128, 122, 122, 0.75);
+-moz-box-shadow: -9px -7px 5px 0px rgba(179, 174, 174, 0.75);
+    
 }
 </style>

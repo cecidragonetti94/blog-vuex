@@ -64,17 +64,16 @@ export default {
   },
 };
 </script>
-<style soped>
+<style >
 .container-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 800px;
   background-color: #eff4f8;
-  width: 1500px;
-
   margin-left: 80px;
+  margin-right: 80px;
   border-radius: 10px;
+  min-height: 80%;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -83,9 +82,6 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-  width: 1500px;
-  height: 900px;
-  margin-top: 40px;
   align-items: center;
   font-size: 20px;
 }
@@ -95,3 +91,4 @@ form {
 }
 
 </style>
+

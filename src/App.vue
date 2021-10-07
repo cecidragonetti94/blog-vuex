@@ -10,11 +10,18 @@
 <script>
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
+import {mapActions} from 'vuex'
 export default {
   components: {
     NavBar,
     Footer,
   },
+  methods:{
+    ...mapActions(['loadLocalStorage'])
+  },
+  created(){
+    this.loadLocalStorage()
+  }
 };
 </script>
 

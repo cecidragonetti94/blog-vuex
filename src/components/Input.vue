@@ -1,4 +1,4 @@
-.<template>
+<template>
   <input
     class="input-name"
     id="input-name"
@@ -69,8 +69,8 @@ export default {
 
 <style>
 .input-name {
-  width: 246px;
-  height: 23px;
+  width: 350px;
+  height: 30px;
   border-radius: 5px;
   color: #2c3e50;
   border: 1px solid #2c3e50;

@@ -21,7 +21,7 @@
         </td>
         <td>{{ item.status }}</td>
         <td>{{ item.number }}</td>
-        <td>
+        <td class="buttons-actions">
             <button class="button-delite" @click="deleteTask(item.id)" > Delete </button>
            <router-link class="router-link-button" :to="{name:'Edit', params:{id: item.id}}">Edit</router-link>
              </td>
@@ -42,7 +42,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 table,
 th,
 td {
@@ -61,6 +61,29 @@ th {
 tr:nth-child(even) {
   background-color: white;
 }
+.buttons-actions{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+.button-delite{
+font-size: 20px;
+cursor: pointer;
+border-radius: 5px;
+border: 1px solid #ad1804;
+background-color: #b94242;
+color:white;
+}
+.router-link-button{
+  background-color: #f5d627;
+  color:black;
+  font-size: 20px;
+  width: 50px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #f3b406;
 
+
+}
 </style>
 
