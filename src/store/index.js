@@ -6,9 +6,9 @@ export default createStore({
     tasks: [],
     task: {
       id: '',
-      name: "",
+      name: '',
       categories: [],
-      status: "",
+      status: '',
       number: 0,
     }
   },
@@ -21,6 +21,12 @@ export default createStore({
     },
     set(state,payload){
       state.tasks.push(payload)
+    },
+    delete(state,payload){
+      state.tasks = state.tasks.filter(item => item.id !== payload)
+    },// voy a filtrar todos los elementos distintos al id=payload que le envio
+    task(state,payload){
+      state.task = state.tasks.find(item => item.id === payload)
     }
   },
   actions: {
@@ -39,6 +45,13 @@ export default createStore({
     },
     setTask({commit},task){
       commit('set',task)
+    },
+    deleteTask({commit},id){
+      commit('delete',id)
+    },
+    setingTask({commit},id){
+      commit('task',id)
+
     }
 
   },

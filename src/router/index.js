@@ -32,6 +32,12 @@ const routes = [
   
     component: () => import('../views/Count.vue')
   },
+  {
+    path: '/edit/:id',
+    name: 'Edit',
+  
+    component: () => import('../views/Edit.vue')
+  },
 ]
 
 const router = createRouter({

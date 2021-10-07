@@ -1,4 +1,10 @@
 <template>
+  <p class="p-count">
+    This is a counter that is made with vuex. The buttons on the right increase
+    and decrease by <strong>15</strong>, while the buttons on the left increase
+    and decrease by <strong>10</strong> .
+    When the counter reaches more than 100 it changes its color.
+  </p>
   <div class="count">
     <h1 :style="contColor">{{ title }} :{{ cont }}</h1>
     <div class="container-button">
@@ -27,7 +33,9 @@ export default {
   computed: {
     ...mapState(["cont"]),
     contColor() {
-      return [this.cont > 100 ? { color: "rgb(17, 182, 204)" } : { color: "violet" }];
+      return [
+        this.cont > 100 ? { color: "rgb(17, 182, 204)" } : { color: "violet" },
+      ];
     },
   },
 
@@ -59,18 +67,24 @@ export default {
   height: 45px;
   width: 100%;
 }
-.buton-incre{
+.buton-incre {
   border-radius: 5px;
-    width: 70px;
-    border:none;
-    font-weight: bold;
-    margin-left: 5px;
-    background-color: violet;
-    color:white;
+  width: 70px;
+  border: none;
+  font-weight: bold;
+  margin-left: 5px;
+  background-color: violet;
+  color: white;
 }
-.buton-incre:hover{
-    background-color:rgb(17, 182, 204);
-    color:white;
-    font-weight: bold
+.buton-incre:hover {
+  background-color: rgb(17, 182, 204);
+  color: white;
+  font-weight: bold;
+}
+.p-count {
+  font-size: 30px;
+  width: 100%;
+  margin-top: 30px;
+ 
 }
 </style>

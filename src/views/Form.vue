@@ -8,8 +8,8 @@
     <p>Please complete the form</p>
     <form @submit.prevent="sendForm">
       <Input :task="task" />
-
-     <!-- <p>{{ task }}</p>  -->
+      <ListTask/>
+    
     </form>
   </div>
 </template>
@@ -17,13 +17,16 @@
 <script>
 import Title from "../components/Title.vue";
 import Input from "../components/Input.vue";
+import ListTask from '../components/ListTask.vue'
 import { mapActions } from "vuex";
 const shortid = require("shortid");
+
 
 export default {
   components: {
     Title,
     Input,
+    ListTask,
   },
   data: () => ({
     task: {
@@ -35,6 +38,7 @@ export default {
     },
   }),
   methods: {
+    ...mapActions(['setTask']),
     sendForm() {
       console.log(this.task);
       if (this.task.name.trim() === "") {
@@ -46,15 +50,17 @@ export default {
       this.task.id = shortid.generate();
       console.log(this.task.id);
       //enviar datos
-      this.setTasks(this.task);
+      this.setTask(this.task);
+      //limpiar datos
       this.task = {
+        id: '',
         name: "",
         categories: [],
         status: "",
         number: 0,
       };
     },
-    ...mapActions(["setTask"]),
+    
   },
 };
 </script>
@@ -66,7 +72,7 @@ export default {
   height: 800px;
   background-color: #eff4f8;
   width: 1500px;
-  height: 600px;
+
   margin-left: 80px;
   border-radius: 10px;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
