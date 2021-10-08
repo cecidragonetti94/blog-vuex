@@ -1,17 +1,18 @@
 <template>
-
-    <Title text="Blog Articles" />
-      <div class="containerBlog">
-    <hr >
+  <Title text="Blog Articles" />
+  <div class="containerBlog">
+    <hr />
 
     <p class="click">Click on an article to read it</p>
 
-    <hr>
+    <hr />
     <!--<button @click="consumirApi">Consume API</button>-->
-    <Loading v-if="load"/>
+    <Loading v-if="load" />
     <div class="container-id">
       <div class="title-id" v-for="item in arrayBlog" :key="item.id">
-        <router-link :to="`/blog/${item.id}`">{{item.id}} - {{ item.title }}</router-link>
+        <router-link :to="`/blog/${item.id}`"
+          >{{ item.id }} - {{ item.title }}</router-link
+        >
       </div>
     </div>
   </div>
@@ -19,7 +20,7 @@
 
 <script>
 import Title from "../components/Title.vue";
-import Loading from '../components/Loading.vue'
+import Loading from "../components/Loading.vue";
 export default {
   components: {
     Title,
@@ -27,7 +28,7 @@ export default {
   },
   data: () => ({
     arrayBlog: [],
-    load:false,
+    load: false,
   }),
   methods: {
     async consumirApi() {
@@ -36,7 +37,7 @@ export default {
         const array = await data.json();
         console.log(array);
         this.arrayBlog = array;
-        this.load=false
+        this.load = false;
       } catch (error) {
         console.log(error);
       }
@@ -45,9 +46,9 @@ export default {
   created() {
     this.consumirApi();
   },
-  mounted(){
-    this.load=true
-  }
+  mounted() {
+    this.load = true;
+  },
 };
 </script>
 
@@ -56,9 +57,10 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: #eff4f8;
+  height: auto;
 }
 .click {
-  height: 50px;
+  max-height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +71,7 @@ export default {
 }
 .title-id {
   margin-top: 10px;
+  height: auto;
   
 }
 

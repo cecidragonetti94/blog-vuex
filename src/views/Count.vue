@@ -49,10 +49,7 @@ export default {
 .count {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 1900px;
-  height: 500px;
+  min-height: 300px;
   background-color: aquamarine;
   border-radius: 10px;
   margin: 200px;
@@ -64,8 +61,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 45px;
-  width: 100%;
+ max-height: 50px;
+ margin-bottom: 74px;
+
 }
 .buton-incre {
   border-radius: 5px;

@@ -17,8 +17,10 @@ export default {};
   background-color: #2c3e50;
   display: flex;
   justify-content: space-between;
+  max-height: 30px;
 
 }
+
 
 .navBar a {
   font-weight: bold;
@@ -28,4 +30,11 @@ export default {};
 .navBar a.router-link-exact-active {
   color: #42b983;
 }
+/* @media screen and (max-width: 980px){
+  .navBar{
+    width: 100%;
+    padding: 15px;
+    
+  }
+} */
 </style>

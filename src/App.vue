@@ -29,19 +29,27 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  height: 100%;
+  
 }
-#app {
+
+.container {
+  display: flex;
+  flex-direction: column;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 1680px;
-  height: 946px;
   justify-content: space-between;
+  max-height: 914px;
 }
+ @media screen and (max-width: 1084px){
+ *{
+   width: 100%;
+   height: 100%;
+
+} 
+ }
+
 </style>

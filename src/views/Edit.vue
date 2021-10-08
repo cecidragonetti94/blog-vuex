@@ -38,7 +38,9 @@ export default {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  min-height: 50%;
+  min-height: auto;
+  box-sizing: border-box;
+  margin: 100px 460px ;
 }
 .span-name{
   font-weight: lighter;

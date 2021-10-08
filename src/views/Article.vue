@@ -2,14 +2,14 @@
   <div class="article">
     <Title text="Article" />
     <h2>Path:{{ $route.params.id }}</h2>
-    <hr />
+   
     <div class="container-article">
       <div class="container-title">
         
         <h2>{{ article.title }}</h2>
       </div>
 
-      <hr />
+   
       <p class="p-article">{{ article.body }}</p>
     </div>
   </div>
@@ -50,8 +50,7 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 1800px;
-  height: 800px;
+ height: auto;
   color: #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }

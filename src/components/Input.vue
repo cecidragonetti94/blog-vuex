@@ -7,7 +7,6 @@
     placeholder="Enter name"
   />
 
-  <hr />
   <div class="formCheck">
     <input
       class="checkbox"
@@ -69,13 +68,14 @@ export default {
 
 <style>
 .input-name {
-  width: 350px;
-  height: 30px;
+  min-width: 485px;
+  max-height: 32px;
   border-radius: 5px;
   color: #2c3e50;
   border: 1px solid #2c3e50;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: 15px;
+  margin-top: 30px;
 }
 .input-name:hover {
   background-color: #eff4f8;
@@ -83,27 +83,31 @@ export default {
 .formCheck {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 40px;
+  height: auto;
+  margin-top: 32px;
 }
 .checkbox {
   width: 20px;
   height: 20px;
+  margin-left: 20px;
 }
 .div-radio {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 300px;
+  min-width: 302px;
+  max-height: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .input-number {
-  width: 50px;
-  height: 20px;
+  max-width: 45px;
+  max-height: 25px;
+  border-radius: 5px;
+  border: 1px solid rgb(49, 132, 209);
 }
 .form-number {
   display: flex;
@@ -124,4 +128,10 @@ export default {
   background-color: #2c3e50;
   color: white;
 }
+
+/* @media screen and (max-width:725px){
+  .button-send{
+    width: 300px;
+  }
+} */
 </style>
