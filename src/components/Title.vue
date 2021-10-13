@@ -12,7 +12,7 @@ export default {
 
 <style>
 h1{
-    font-size: 80px;
+    font-size: 50px;
     color: #2c3e50;
 }
 </style>
