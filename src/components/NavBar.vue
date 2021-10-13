@@ -18,13 +18,17 @@ export default {};
   display: flex;
   justify-content: space-between;
   max-height: 30px;
-
+box-shadow: 2px 8px 5px 0px rgba(159,148,148,0.75);
+-webkit-box-shadow: 2px 8px 5px 0px rgba(159,148,148,0.75);
+-moz-box-shadow: 2px 8px 5px 0px rgba(159,148,148,0.75);
 }
 
 
 .navBar a {
   font-weight: bold;
   color: #eff4f8;
+  font-size: 40px;
+  text-decoration: none;
 }
 
 .navBar a.router-link-exact-active {

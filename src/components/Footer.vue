@@ -23,6 +23,10 @@ color:snow;
 }
 footer{
  max-height: 30px;
+ box-shadow: 0px -6px 5px 0px rgba(159,148,148,0.75);
+-webkit-box-shadow: 0px -6px 5px 0px rgba(159,148,148,0.75);
+-moz-box-shadow: 0px -6px 5px 0px rgba(159,148,148,0.75);
+
 }
 
 
