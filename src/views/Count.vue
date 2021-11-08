@@ -1,9 +1,9 @@
 <template>
   <p class="p-count">
-    This is a counter that is made with vuex. The buttons on the right increase
-    and decrease by <strong>15</strong>, while the buttons on the left increase
-    and decrease by <strong>10</strong> .
-    When the counter reaches more than 100 it changes its color.
+    Este contador esta hecho con vuex. Los botones de la derecha aumentan y disminuyen en 
+    <strong>15</strong>,  mientras que los botones de la izquierda que para aumentar y disminuir utilizo el store, aumentan y disminuyen en 
+ <strong>10</strong> .
+   Cuando el contador llega a 100 los botones cambian de color.
   </p>
   <div class="count">
     <h1 :style="contColor">{{ title }} :{{ cont }}</h1>
